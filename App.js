@@ -9,19 +9,19 @@ import { Picker } from '@react-native-picker/picker';
 
 const options = [
         {
-            id: '1',
+            id: '0',
             label: 'Breakfast',
-            value: 'breakfast'
+            value: 0
         },
         {
-            id: '2',
+            id: '1',
             label: 'Lunch',
-            value: 'lunch'
+            value: 1
         },
          {
-            id: '3',
+            id: '2',
             label: 'Dinner',
-            value: 'dinner'
+            value: 2
         }
     ];
  
@@ -30,8 +30,8 @@ const options = [
 export default function App() {
   return (
     ///<Login />
-   ////  <CreateAccount />
-    <CreateRecipe />
+    <CreateAccount />
+   /// <CreateRecipe />
   );
 }
 
