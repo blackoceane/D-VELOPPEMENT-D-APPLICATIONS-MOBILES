@@ -1,7 +1,7 @@
-import { Button } from 'react-native';
 import { StyleSheet, Text, View, TextInput} from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Button } from '@react-navigation/elements';
 
 
 
@@ -28,7 +28,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
         </View>
         
         <View  style={{ marginTop: 20, width: '80%' }}>
-          <Button title="Create Account" color= '#ce22f5' />
+          <Button  color= '#ce22f5'   screen="Login"> Create Account </Button>
+          
         </View>
       
       </View>
@@ -41,15 +42,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  container: {
-                       
+  container: {                  
     justifyContent: 'center', 
     alignItems: 'center'  , 
     margin:'auto',
-    padding: 20,
-    
+    padding: 20, 
   },
-  
   
   input: {
     width: '70%',
@@ -58,22 +56,21 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   
- inputContainer: {
-  width: '100%', // a reflechir
-  flexDirection: 'row',      
-  alignItems: 'center',      
-  borderWidth: 2,
-  borderRadius: 20,
-  borderColor: '#ccc',
-  paddingHorizontal: 10,
-  margin:20,
-},
+  inputContainer: {
+    width: '100%', // a reflechir
+    flexDirection: 'row',      
+    alignItems: 'center',      
+    borderWidth: 2,
+    borderRadius: 20,
+    borderColor: '#ccc',
+    paddingHorizontal: 10,
+    margin:20,
+  },
  
-icon: {
-  marginRight: 8,            
-},
+  icon: {
+    marginRight: 8,            
+  },
 
 });
-
 
 export default CreateAccount;

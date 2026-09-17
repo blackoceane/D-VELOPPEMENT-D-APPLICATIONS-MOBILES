@@ -25,11 +25,11 @@ function Login() {
             </View>
 
             <View style={{ margin: 10  }} >
-               <Button  color= '#ce22f5'   screen="CreateRecipe"> Login </Button>
+               <Button  color= '#ce22f5'   screen="Recipes"> Login </Button>
             </View>
 
             <View  style={{ marginTop: 20 , width: '80%' }}>
-                <Text style={{  textAlign: 'center'}}>Don't have an account ? <Link screen="CreateAccount" style={{ color: '#ce22f5',  }}> Create </Link>  </Text>
+                <Text style={{  textAlign: 'center'}}>Don't have an account ? <Link screen="Signup" style={{ color: '#ce22f5',  }}> Create </Link>  </Text>
             </View>
 
         </View>
@@ -52,27 +52,24 @@ const styles = StyleSheet.create({
     padding: 20,
     
   },
-  
-  
   input: {
     width: '70%',
     height: 40,
     margin: 10,
     padding: 10,
   },
-  
  inputContainer: {
-  width: '100%', // a reflechir
-  flexDirection: 'row',      
-  alignItems: 'center',      
-  borderWidth: 2,
-  borderRadius: 20,
-  borderColor: '#ccc',
-  paddingHorizontal: 10,
-  margin:20,
-},
-icon: {
-  marginRight: 8,            
-},
+    width: '100%', // a reflechir
+    flexDirection: 'row',      
+    alignItems: 'center',      
+    borderWidth: 2,
+    borderRadius: 20,
+    borderColor: '#ccc',
+    paddingHorizontal: 10,
+    margin:20,
+  },
+  icon: {
+    marginRight: 8,            
+  },
 });
 export default Login;

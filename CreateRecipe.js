@@ -87,15 +87,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  container: {
-                       
+  container: {                  
     justifyContent: 'center', 
     alignItems: 'center'  , 
     margin:'auto',
     padding: 20,
-    
   },
-  
   
   input: {
     width: '70%',
@@ -104,45 +101,44 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   
- inputContainer: {
-  width: '100%', // a reflechir
-  flexDirection: 'row',      
-  alignItems: 'center',      
-  borderWidth: 2,
-  borderRadius: 20,
-  borderColor: '#ccc',
-  paddingHorizontal: 10,
-  margin:20,
-},
- 
-icon: {
-  marginRight: 8,            
-},
-descriptionInput: {
-  margin:20,
-  width : 350,    
-  height: '40%',
-  borderWidth: 2,
-  borderColor: '#ccc',
-  borderRadius: 20,
-  padding: 10,
-  textAlignVertical: 'top', 
-},
-pickersContainer: {
-  width: '100%',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  marginBottom: 20,
-  
-},
-picker: {
-  flex: 1,
-  height: 'auto',
-  borderWidth: 0,
-  backgroundColor: 'white',
-  marginHorizontal: 5,
- 
-},
+  inputContainer: {
+    width: '100%', // a reflechir
+    flexDirection: 'row',      
+    alignItems: 'center',      
+    borderWidth: 2,
+    borderRadius: 20,
+    borderColor: '#ccc',
+    paddingHorizontal: 10,
+    margin:20,
+  },
+
+  icon: {
+    marginRight: 8,            
+  },
+  descriptionInput: {
+    margin:20,
+    width : 350,    
+    height: '40%',
+    borderWidth: 2,
+    borderColor: '#ccc',
+    borderRadius: 20,
+    padding: 10,
+    textAlignVertical: 'top', 
+  },
+  pickersContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+
+  picker: {
+    flex: 1,
+    height: 'auto',
+    borderWidth: 0,
+    backgroundColor: 'white',
+    marginHorizontal: 5,
+  },
 });
 
 export default CreateRecipe;
