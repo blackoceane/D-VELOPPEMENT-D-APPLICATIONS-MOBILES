@@ -5,8 +5,12 @@ function ListeRecipe() {
   return (
         <View style={styles.screen}>
             <View style={styles.container}>
-                <Text style={{ color: '#ce22f5', fontSize: 90, textAlign: 'center',  marginBottom: '20%'}}>RECIPES LIST</Text>
-                <Text style={{ color: '#ce22f5', fontSize: 10, textAlign: 'center',  marginTop: '40%'}}> LIST EMPTY</Text>
+                <View style={styles.msm}>
+                <Text style={{ color: '#ce22f5', fontSize: 20, textAlign: 'center'}}> LIST EMPTY</Text>
+                </View>
+                <View style={styles.add}>
+
+                </View>
             </View>
         </View>
     );
@@ -17,11 +21,21 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
     },
-    container: {                  
+    container: {   
+        flex:1,               
         justifyContent: 'center', 
         alignItems: 'center'  , 
         margin:'auto',
         padding: 20,
     },
+    msm:{
+       flex:1,
+       justifyContent:'center',
+    },
+    add:{
+       flex:1,
+       justifyContent:'flex-end',
+
+    }
 });
 export default ListeRecipe;
