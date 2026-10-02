@@ -8,7 +8,7 @@ import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 const PRIMARY_COLOR = '#ce22f5';
 
-const options = [
+const categories = [
         {
             id: '0',
             label: 'Breakfast',
@@ -42,7 +42,7 @@ function CreateRecipe({route}) {
         <Text style={{flex:1, color: PRIMARY_COLOR, fontSize: 30, textAlign: 'center'}}>Add A Recipe</Text>
         
         <View style={{flex:0.5, alignItems: 'center' }}>
-         <RadioGroup  radioButtons= { options } layout= 'row' onPress={setSelectedId} selectedId={selectedId} />
+         <RadioGroup  radioButtons= { categories } layout= 'row' onPress={setSelectedId} selectedId={selectedId} />
         </View>
        
         <View style={styles.inputContainer}>
