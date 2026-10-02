@@ -1,79 +1,73 @@
+
+import * as React from 'react';
 import { Button } from 'react-native';
 import { StyleSheet, Text, View, TextInput,Pressable} from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import RadioGroup from 'react-native-radio-buttons-group';
 import { Picker } from '@react-native-picker/picker';
-
+import { useNavigation } from '@react-navigation/native';
+const PRIMARY_COLOR = '#ce22f5';
 
 const options = [
         {
             id: '0',
             label: 'Breakfast',
-            value: 0
+            value: 'Breakfast'
         },
         {
             id: '1',
             label: 'Lunch',
-            value: 1
+            value: 'Lunch'
         },
          {
             id: '2',
             label: 'Dinner',
-            value: 2
+            value: 'Dinner'
         }
     ];
  
 
 
-function CreateRecipe() {
+function CreateRecipe({route}) {
+  const navigation = useNavigation();
+  const [recipeName, setRecipeName] = React.useState('');
+  const [selectedId, setSelectedId] = React.useState("1");
+  const [selectedHour, setSelectedHour] = React.useState("1");
+  const [selectedMinute, setSelectedMinute] = React.useState("10");
+  const [description, setDescription] = React.useState('');
   return (
    <View style={styles.screen}>
 
      <View style={styles.container}>
-        <Text style={{ color: '#ce22f5', fontSize: 30, textAlign: 'center',  marginBottom: '20%'}}>Add A Recipe</Text>
+        <Text style={{flex:1, color: PRIMARY_COLOR, fontSize: 30, textAlign: 'center'}}>Add A Recipe</Text>
         
-        <View>
-         <RadioGroup  radioButtons= { options } layout= 'row'/>
+        <View style={{flex:0.5, alignItems: 'center' }}>
+         <RadioGroup  radioButtons= { options } layout= 'row' onPress={setSelectedId} selectedId={selectedId} />
         </View>
        
         <View style={styles.inputContainer}>
           <Ionicons name="person" size={24} color="black" />
-          <TextInput style={styles.input} placeholder="Name"   autoCapitalize="none"/> 
+          <TextInput style={styles.input} placeholder="Name"   autoCapitalize="none" value = {recipeName} onChangeText={setRecipeName}/> 
         </View>
        
         <View style={styles.pickersContainer} >
-          <Text style={{ fontSize: 20 , marginTop: 10}}>Duration :</Text>
+          <Text style={{ fontSize: 20 }}>Duration :</Text>
+          <Picker style={styles.picker} selectedValue={selectedHour}  onValueChange={(itemValue) => setSelectedHour(itemValue)}>
+            {renderHourItems()}
+          </Picker>
           
-          <Picker style = {styles.picker}>
-            <Picker.Item label=" 1 h" value="1" />
-            <Picker.Item label=" 2 h" value="2" />
-            <Picker.Item label=" 3 h" value="3" />
-            <Picker.Item label=" 4 h" value="4" />
-            <Picker.Item label=" 5 h" value="5" />
-            <Picker.Item label=" 6 h" value="6" />
-            <Picker.Item label=" 7 h" value="7" />
-            <Picker.Item label=" 8 h" value="8" />
-            <Picker.Item label=" 9 h" value="9" />
-            <Picker.Item label=" 10 h" value="10" />
-            <Picker.Item label=" 11 h" value="11" />
-            <Picker.Item label=" 12 h" value="12" />
-          </Picker>
 
-          <Text style={{ fontSize: 20 , marginTop: 10}}> : </Text>
-          <Picker style = {styles.picker}>
-            <Picker.Item label=" 10 min" value="1" />
-            <Picker.Item label=" 20 min" value="2" />
-            <Picker.Item label=" 30 min" value="3" />
-            <Picker.Item label=" 40 min" value="4" />
-            <Picker.Item label=" 50 min" value="5" />
-            <Picker.Item label=" 60 min" value="6" />
+          <Text style={{ fontSize: 20 }}> : </Text>
+          <Picker style={styles.picker} selectedValue={selectedMinute} onValueChange={(itemValue) => setSelectedMinute(itemValue)} >
+           {renderMinuteItems()}
           </Picker>
-        
+          
         </View>
-
-        <TextInput placeholder="Entrez votre description" multiline numberOfLines={4} editable  textAlignVertical="top" style={styles.descriptionInput}/>
-        <View style={{ margin: 10  }} >
-          <Button title="Save Recipe"  color= '#ce22f5'   />
+         <View style={{flex:3 ,flexDirection: 'row'}}>
+        <TextInput placeholder="Entrez votre description" multiline numberOfLines={4} editable  textAlignVertical="top" style={styles.descriptionInput} value={description} onChangeText={setDescription}/>
+        </View>
+        <View style={{ flex:0.5  , margin: 20 }} >
+          <Button  title='Save Recipe' color={PRIMARY_COLOR}  onPress = {() => navigation.popTo('Recipes' , {recipeName, selectedId, selectedHour, selectedMinute, description})} />
         </View>
       
       </View>
@@ -82,16 +76,42 @@ function CreateRecipe() {
   );
 }
 
+
+
+function renderHourItems() {
+  const items = [];
+  for (let i = 1; i <= 12; i++) {
+    items.push(
+      <Picker.Item key={i} label={`${i} h`} value={i.toString()} />
+    );
+  }
+  return items;
+}
+
+function renderMinuteItems() {
+  const items = [];
+  for (let i = 1; i <= 6; i++) {
+    const minuteVal = i * 10;
+    items.push(
+      <Picker.Item key={minuteVal} label={`${minuteVal} min`} value={minuteVal.toString()} />
+    );
+  }
+  return items;
+}
+
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: 'white',
+
   },
   container: {                  
-    justifyContent: 'center', 
+     flex:1,                
     alignItems: 'center'  , 
     margin:'auto',
-    padding: 20,
+    padding: 20, 
+
   },
   
   input: {
@@ -102,23 +122,21 @@ const styles = StyleSheet.create({
   },
   
   inputContainer: {
-    width: '100%', // a reflechir
-    flexDirection: 'row',      
+    flex: 0.2,    
+    flexDirection: 'row', 
     alignItems: 'center',      
     borderWidth: 2,
     borderRadius: 20,
     borderColor: '#ccc',
     paddingHorizontal: 10,
-    margin:20,
+    
   },
 
   icon: {
     marginRight: 8,            
   },
   descriptionInput: {
-    margin:20,
-    width : 350,    
-    height: '40%',
+    flex: 1,
     borderWidth: 2,
     borderColor: '#ccc',
     borderRadius: 20,
@@ -126,10 +144,9 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top', 
   },
   pickersContainer: {
-    width: '100%',
+    flex: 0.5,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20,
+alignItems: 'center',
   },
 
   picker: {

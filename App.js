@@ -9,7 +9,7 @@ import { TouchableOpacity , Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
-
+const PRIMARY_COLOR = '#ce22f5';
 
 export default function App() {
     return (
@@ -17,7 +17,7 @@ export default function App() {
         <StatusBar style="light" />
          <View style={{ flex: 1, backgroundColor: 'white' }}>
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Login"   screenOptions={{ headerStyle: { backgroundColor: '#ce22f5' }, headerTintColor: 'white'}}>
+            <Stack.Navigator initialRouteName="Login"   screenOptions={{ headerStyle: { backgroundColor: PRIMARY_COLOR }, headerTintColor: 'white'}}>
 
                 <Stack.Screen name="Login" component={ Login }  />
                 <Stack.Screen name="Recipe" component={ CreateRecipe } />

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     justifyContent:'flex-end',
   },
   input: {
-    width: '70%',
+  width: '70%',
     height: 40,
     margin: 10,
     padding: 10,
