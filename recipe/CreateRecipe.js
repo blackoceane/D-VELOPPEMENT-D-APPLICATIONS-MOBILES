@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Button } from 'react-native';
 import { StyleSheet, Text, View, TextInput,Pressable} from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from '@expo/vector-icons/Ionicons.js';
 import RadioGroup from 'react-native-radio-buttons-group';
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';

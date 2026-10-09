@@ -1,30 +1,14 @@
 
-import { Button } from 'react-native';
-import { StyleSheet, Text, View, TextInput,Pressable} from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import RadioGroup from 'react-native-radio-buttons-group';
-import { Picker } from '@react-native-picker/picker';
-
-
-const options = [
-        {
-            id: '1',
-            label: 'Breakfast',
-            value: 'breakfast'
-        },
-        {
-            id: '2',
-            label: 'Lunch',
-            value: 'lunch'
-        },
-         {
-            id: '3',
-            label: 'Dinner',
-            value: 'dinner'
-        }
-    ];
- 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CreateRecipe from './recipe/CreateRecipe.js';
+import CreateAccount from './recipe/CreateAccount.js';
+import Login from './recipe/Login.js';
+import ListeRecipe from './recipe/ListeRecipe.js';
+import { TouchableOpacity , Text, View} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import colors, { PRIMARY_COLOR } from './colors.js';
+const Stack = createNativeStackNavigator();
 
 
 export default function App() {

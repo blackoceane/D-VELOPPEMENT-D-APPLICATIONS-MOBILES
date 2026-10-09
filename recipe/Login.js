@@ -1,6 +1,6 @@
 import { StyleSheet,Text, View, TextInput} from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Ionicons from '@expo/vector-icons/Ionicons.js';
+import FontAwesome from '@expo/vector-icons/FontAwesome.js';
 import { Link } from '@react-navigation/native';
 import { Button } from '@react-navigation/elements';
 import colors, { PRIMARY_COLOR } from '../colors.js';
