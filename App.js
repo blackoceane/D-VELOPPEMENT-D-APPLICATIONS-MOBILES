@@ -26,8 +26,11 @@ export default function App() {
                     options={({navigation}) => ({
                        headerBackVisible:false ,
                         headerRight: ()=> (
-                            <TouchableOpacity  onPress={() => navigation.replace('Login')}>
-                                   <Text style={{fontSize:20 , color:'white'}}>Log out</Text>
+                            <TouchableOpacity  onPress={() => navigation.reset({
+                                index: 0,
+                                routes: [{ name: 'Login' }],
+                            })}>
+                               <Text style={{fontSize:20 , color:'white'}}>Log out</Text>
                             </TouchableOpacity>
                         ),
                     })} 

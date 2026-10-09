@@ -9,7 +9,7 @@ import { Ecran,Champ,Container,Entete } from '../components.js';
   return (
    <Ecran>
        <Entete>
-         <Text style={{ color: PRIMARY_COLOR, fontSize: 30 }}>Create an account</Text>
+         <Text style={{ color: PRIMARY_COLOR, fontSize: 30 }}>Create an account </Text>
        </Entete>
         <View style={styles.form}>
           <Container>
@@ -28,7 +28,7 @@ import { Ecran,Champ,Container,Entete } from '../components.js';
           </Container>
          </View>
            <View style={{ flex:1 , justifyContent:'flex-start' }} >
-            <Button  color= {PRIMARY_COLOR}   screen="Login"> Create Account </Button>  
+            <Button  color= {PRIMARY_COLOR}   screen="Recipes"> Create Account </Button>  
           </View>
      
    </Ecran>
