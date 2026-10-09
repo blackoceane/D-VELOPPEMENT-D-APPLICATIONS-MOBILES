@@ -1,26 +1,20 @@
-import { TextInput, TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import { COLORS } from './colors';
+import {
+  TextInput,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  View,
+} from "react-native";
+import { COLORS } from "./colors";
 
 export function Ecran({ children, style }) {
-  return (
-    <View style={styles.screen}>
-        {children}
-      </View>
-  );
+  return <View style={styles.screen}>{children}</View>;
 }
 export function Container({ children, style }) {
-  return (
-    <View style={styles.inputContainer}>
-        {children}
-      </View>
-  );
+  return <View style={styles.inputContainer}>{children}</View>;
 }
 export function Entete({ children, style }) {
-  return (
-    <View style={styles.header}>
-        {children}
-      </View>
-  );
+  return <View style={styles.header}>{children}</View>;
 }
 export function Champ({ style, ...props }) {
   return (
@@ -32,36 +26,29 @@ export function Champ({ style, ...props }) {
   );
 }
 
-
-
 const styles = StyleSheet.create({
- 
-   header: {
+  header: {
     flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
-  screen: {  
-    flex:1,                
-    justifyContent: 'center', 
-    padding: 15, 
-  
-    
+  screen: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 15,
   },
   input: {
-  flex: 1,         
-  margin: 10,
-  },
-  
-  inputContainer: {
-    flexDirection: 'row',      
-    alignItems: 'center',      
-    borderWidth: 2,
-    borderRadius: 20,
-    borderColor: '#ccc',
-    paddingHorizontal: 20,
-    margin:20,
+    flex: 1,
+    margin: 10,
   },
 
+  inputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 2,
+    borderRadius: 20,
+    borderColor: "#ccc",
+    paddingHorizontal: 20,
+    margin: 20,
+  },
 });
